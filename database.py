@@ -1,5 +1,6 @@
 import os
 import pymongo
+import certifi
 
 CONN = os.getenv('MDB_CONN',default="Please provide connection string MDB_CONN.")
 DB = os.getenv('DB',default="Please provide DB.")
@@ -9,7 +10,7 @@ class Repository:
 
     # Initializing
     def __init__(self):
-        self.client = pymongo.MongoClient(CONN)
+        self.client = pymongo.MongoClient(CONN, tlsCAFile=certifi.where())
  
     # Deleting (Calling destructor)
     def __del__(self):
