@@ -2,7 +2,7 @@
     <div class="row g-0">
         <div class="col-md-4">
             <img class="card-img-top" style="width:150px"
-            src={{ "data:image/jpeg;base64," + movie.poster_blob }} alt="Card image cap">
+            src={{ "data:image/jpeg;base64," + movie.get('poster_blob', 'R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==') }} alt="Card image cap">
             
         </div>
         <div class="col-md-8">
